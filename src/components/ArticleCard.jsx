@@ -1,14 +1,26 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const ArticleCard = ({ topic, author, created_at, article_img_url, title }) => {
+const ArticleCard = ({
+  article_id,
+  topic,
+  author,
+  created_at,
+  article_img_url,
+  title,
+}) => {
   return (
     <div className="article-card">
-      <img class="article-card-img" src={article_img_url} />
+      <Link to={`/articles/${article_id}`}>
+        <img className="article-card-img" src={article_img_url} />
+      </Link>
       <div className="article-card-details">
-          <p>{topic}</p>
+        <p>{topic}</p>
+        <Link to={`/articles/${article_id}`}>
           <h2>{title}</h2>
-          <p>{created_at}</p>
-          <p>{author}</p>
+        </Link>
+        <p>{created_at}</p>
+        <p>posted by: {author}</p>
       </div>
     </div>
   );

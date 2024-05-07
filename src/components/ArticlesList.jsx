@@ -1,23 +1,34 @@
 import React from "react";
+import Lottie from 'lottie-react'
 import ArticleCard from "./ArticleCard";
-import axios from "axios";
+import {getArticles} from '../utils/utils'
+import loadingGraphic from '../assets/loadingGraphic.json'
 
 const ArticlesList = () => {
   const [currentArticles, setCurrentArticles] = React.useState([]);
+  const [loading, setLoading] = React.useState(true)
 
   React.useEffect(() => {
-    axios
-      .get("https://northcoders-news-7ei3.onrender.com/api/articles")
-      .then(({ data }) => {
-        setCurrentArticles(data.articles);
+    getArticles()
+      .then((data) => {
+        setCurrentArticles(data);
+        setLoading(false)
       });
   }, []);
 
+  if(loading){
+    return(
+      <div>
+        <Lottie animationData={loadingGraphic}/>
+      </div>
+    )
+  }
   return (
     <section className="articles-list">
       {currentArticles.map((article) => (
-        <ArticleCard
+        <ArticleCard 
           key={article.article_id}
+          article_id={article.article_id}
           topic={article.topic}
           author={article.author}
           title={article.title}

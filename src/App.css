@@ -10,10 +10,18 @@
 h1{
   font-size: 72px;
   text-align: left;
+  padding-bottom:20px;
 }
 h2 {
   font-size:large;
   text-align: left;
+}
+h3{
+  text-align: right;
+  color: white;
+  background-color: black;
+  width:100;
+  padding:20px;
 }
 .articles-list{
   display: inline-flex;
@@ -34,4 +42,19 @@ h2 {
 }
 .article-card-details{
   flex: 1 1 auto;
+}
+.single-article{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width:100%;
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.single-article-img{
+  max-width: 100%;
+  height: auto;
+  margin: 30px auto;
 }

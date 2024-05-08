@@ -19,7 +19,7 @@ const Article = () => {
       <p>{currentArticle.topic}</p>
       <h2>{currentArticle.title}</h2>
       <p>{currentArticle.body}</p>
-      <p> posted by: {currentArticle.author}</p>
+      <p>by {currentArticle.author}</p>
       <p>{currentArticle.created_at}</p>
     </div>
     </section>

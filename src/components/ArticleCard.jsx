@@ -20,7 +20,7 @@ const ArticleCard = ({
           <h2>{title}</h2>
         </Link>
         <p>{created_at}</p>
-        <p>posted by: {author}</p>
+        <p>by {author}</p>
       </div>
     </div>
   );

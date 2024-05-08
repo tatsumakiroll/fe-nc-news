@@ -2,6 +2,7 @@ import React from "react";
 import { getArticleById } from "../utils/utils";
 import { useParams } from "react-router";
 import CommentsList from "./CommentsList";
+import ArticleVoteCard from './ArticleVoteCard'
 
 const Article = () => {
   const [currentArticle, setCurrentArticle] = React.useState([]);
@@ -17,6 +18,7 @@ const Article = () => {
     <section>
     <div className="single-article">
       <img className="single-article-img"src={currentArticle.article_img_url} />
+      <ArticleVoteCard className="" article_id={currentArticle.article_id} votes={currentArticle.votes}/>
       <p>{currentArticle.topic}</p>
       <h2>{currentArticle.title}</h2>
       <p>{currentArticle.body}</p>

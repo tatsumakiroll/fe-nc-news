@@ -10,7 +10,6 @@ const CommentsList = () => {
   React.useEffect(() => {
     getCommentsByArticleId(article_id).then((data)=>{
         setComments(data)
-
     })
   }, []);
 

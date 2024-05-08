@@ -1,18 +1,19 @@
 #root {
   font-family: Serif;
   flex-direction: column;
-  width:100vh;
+  width:90vh;
   height:fit-content;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
 }
 h1{
-  font-size: 72px;
+  font-size: 34px;
   text-align: left;
-  padding-bottom:20px;
+  width:90%;
 }
 h2 {
+  width:100%;
   font-size:large;
   text-align: left;
 }
@@ -20,8 +21,8 @@ h3{
   text-align: right;
   color: white;
   background-color: black;
-  width:100;
-  padding:20px;
+  width:95%;
+  padding:10px;
 }
 .articles-list{
   display: inline-flex;
@@ -30,31 +31,31 @@ h3{
 }
 .article-card{
   text-align: left;
-  padding: 10px 10px 10px;
   width: 90%;
   display: flex;
+  margin:0;
 }
 .article-card-img{
-  margin: 20px 30px 00;
-  width:300px;
+  width:80%;
+  min-width:200px;
+  max-width:600px;
   object-fit:contain;
   align-self:flex-start;
 }
 .article-card-details{
   flex: 1 1 auto;
+  width:80%;
 }
 .single-article{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width:100%;
-  height: 100vh;
-  padding: 20px;
+  width:90%;
+  padding-top: 10px;
   box-sizing: border-box;
 }
 .single-article-img{
-  max-width: 100%;
-  height: auto;
-  margin: 30px auto;
+  width: 80%;
+  /* margin: 20px auto; */
 }

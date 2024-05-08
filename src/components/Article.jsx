@@ -1,6 +1,7 @@
 import React from "react";
 import { getArticleById } from "../utils/utils";
 import { useParams } from "react-router";
+import CommentsList from "./CommentsList";
 
 const Article = () => {
   const [currentArticle, setCurrentArticle] = React.useState([]);
@@ -22,6 +23,7 @@ const Article = () => {
       <p>by {currentArticle.author}</p>
       <p>{currentArticle.created_at}</p>
     </div>
+    < CommentsList article={currentArticle}/>
     </section>
   );
 };

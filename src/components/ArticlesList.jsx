@@ -1,32 +1,31 @@
 import React from "react";
-import Lottie from 'lottie-react'
+import Lottie from "lottie-react";
 import ArticleCard from "./ArticleCard";
-import {getArticles} from '../utils/utils'
-import loadingGraphic from '../assets/loadingGraphic.json'
+import { getArticles } from "../utils/utils";
+import loadingGraphic from "../assets/loadingGraphic.json";
 
 const ArticlesList = () => {
-  const [currentArticles, setCurrentArticles] = React.useState([]);
-  const [loading, setLoading] = React.useState(true)
+  const [articles, setArticles] = React.useState([]);
+  const [loading, setLoading] = React.useState(true);
 
   React.useEffect(() => {
-    getArticles()
-      .then((data) => {
-        setCurrentArticles(data);
-        setLoading(false)
-      });
+    getArticles().then((data) => {
+      setArticles(data);
+      setLoading(false);
+    });
   }, []);
 
-  if(loading){
-    return(
+  if (loading) {
+    return (
       <div>
-        <Lottie animationData={loadingGraphic}/>
+        <Lottie animationData={loadingGraphic} />
       </div>
-    )
+    );
   }
   return (
     <section className="articles-list">
-      {currentArticles.map((article) => (
-        <ArticleCard 
+      {articles.map((article) => (
+        <ArticleCard
           key={article.article_id}
           article_id={article.article_id}
           topic={article.topic}

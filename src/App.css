@@ -21,7 +21,7 @@ h3{
   text-align: right;
   color: white;
   background-color: black;
-  width:95%;
+  width:90%;
   padding:10px;
 }
 .articles-list{
@@ -51,11 +51,25 @@ h3{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width:90%;
+  width:92.5%;
   padding-top: 10px;
   box-sizing: border-box;
 }
 .single-article-img{
-  width: 80%;
-  /* margin: 20px auto; */
+  width: 90%;
+}
+
+.comments-list{
+  width:90%;
+}
+.comment-card{
+  display:block;
+  font-size:small;
+}
+.comment-body{
+  float:left;
+  width:90%;
+}
+.comment-vote{
+  float:inline-end;
 }

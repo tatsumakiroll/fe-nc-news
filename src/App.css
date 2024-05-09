@@ -51,14 +51,28 @@ h3 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 92.5%;
+  width: 100%;
   padding-top: 10px;
   box-sizing: border-box;
 }
-.single-article-img {
-  width: 90%;
+.art-section-a {
+  float: right;
+  text-align: left;
+  color: black;
 }
-
+.art-title {
+  padding: 5px;
+}
+.art-section-c {
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+}
+.single-article-img {
+  width: 55%;
+  float: left;
+  margin-right: 16px;
+}
 .comments-list {
   width: 90%;
 }
@@ -74,18 +88,30 @@ h3 {
   float: inline-end;
 }
 .article-vote {
-  padding: 1rem;
+  width: 25%;
+  border-radius: 10px;
+  margin: 0.5rem;
+  padding: 0.75rem;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .article-vote-count {
-  width: 100%;
-  font-size: large;
-  text-align: left;
+  font-size: small;
+  text-align: center;
   font-weight: 1000;
   padding-right: 10px;
 }
-.vote-button{
-  margin:5px;
+.vote-button {
+  font-size: small;
+  align-items: center;
+  margin: 5px;
+}
+.comment-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  color: black;
+  background-color: white;
+  width: 95%;
 }

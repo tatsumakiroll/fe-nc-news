@@ -2,7 +2,7 @@ import React from "react";
 import { getArticleById } from "../utils/utils";
 import { useParams } from "react-router";
 import CommentsList from "./CommentsList";
-import ArticleVoteCard from './ArticleVoteCard'
+import ArticleVoteCard from "./ArticleVoteCard";
 import Lottie from "lottie-react";
 import loadingGraphic from "../assets/loadingGraphic.json";
 
@@ -28,16 +28,26 @@ const Article = () => {
 
   return (
     <section>
-    <div className="single-article">
-      <img className="single-article-img"src={currentArticle.article_img_url} />
-      <ArticleVoteCard className="" article_id={currentArticle.article_id} votes={currentArticle.votes}/>
-      <p>{currentArticle.topic}</p>
-      <h2>{currentArticle.title}</h2>
-      <p>{currentArticle.body}</p>
-      <p>by {currentArticle.author}</p>
-      <p>{currentArticle.created_at}</p>
-    </div>
-    < CommentsList article={currentArticle}/>
+      <div className="single-article">
+        <div className="art-section-a">
+          <img
+            className="single-article-img"
+            src={currentArticle.article_img_url}
+          />
+          <>//{currentArticle.topic}</>
+          <h2 className="art-title">{currentArticle.title}</h2>
+          <ArticleVoteCard
+            article_id={currentArticle.article_id}
+            votes={currentArticle.votes}
+          />
+        </div>
+        <p className="art-section-b">{currentArticle.body}</p>
+        <div className="art-section-c">
+          <p>by {currentArticle.author}</p>
+          <p>{currentArticle.created_at}</p>
+        </div>
+      </div>
+      <CommentsList article={currentArticle} />
     </section>
   );
 };

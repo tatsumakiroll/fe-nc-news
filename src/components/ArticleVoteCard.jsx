@@ -22,14 +22,14 @@ const ArticleVoteCard = ({ article_id, votes }) => {
         className="vote-button"
         onClick={handleUpVote}
       >
-        like
+        👍
       </button>
       <button
         disabled={voteIncrement === -1}
         className="vote-button"
         onClick={handleDownVote}
       >
-        dislike
+       👎
       </button>
     </div>
   );

@@ -12,20 +12,21 @@ const CommentsList = () => {
     getCommentsByArticleId(article_id).then((data) => {
       setComments(data);
     });
-  }, []);
+  }, [comments]);
 
   return (
     <div className="comments-list">
       {comments.map((comment) => (
         <CommentCard
           key={comment.comment_id}
+          comment_id={comment.comment_id}
           body={comment.body}
           author={comment.author}
           created_at={comment.created_at}
           votes={comment.votes}
         />
       ))}
-      <CommentPostForm article_id={article_id} setComments={setComments}/>
+      <CommentPostForm article_id={article_id} setComments={setComments} />
     </div>
   );
 };

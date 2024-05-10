@@ -4,8 +4,8 @@ const ncApi = axios.create({
   baseURL: `https://northcoders-news-7ei3.onrender.com/api`,
 });
 
-export const getArticles = () => {
-  return ncApi.get("/articles").then(({ data }) => {
+export const getArticles = (topicQuery) => {
+  return ncApi.get("/articles", {params: { topic: topicQuery }}).then(({ data }) => {
     return data.articles;
   });
 };
@@ -33,6 +33,12 @@ export const postComment = (article_id, body, username) => {
     });
 };
 
+export const deleteComment = (comment_id) => {
+  return ncApi.delete(`/comments/${comment_id}`).then(({ data }) => {
+    return data;
+  });
+};
+
 export const patchArticleVotes = (article_id, number) => {
   return ncApi
     .patch(`/articles/${article_id}`, { inc_votes: number })
@@ -40,3 +46,15 @@ export const patchArticleVotes = (article_id, number) => {
       return res;
     });
 };
+
+export const getUsers = () => {
+  return ncApi.get("/users").then(({ data }) => {
+    return data.users;
+  });
+};
+
+export const getTopics = () => {
+  return ncApi.get("/topics").then(({data})=>{
+    return data.topics;
+  })
+}

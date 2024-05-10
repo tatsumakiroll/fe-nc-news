@@ -17,7 +17,7 @@ const CommentPostForm = ({ setComments, article_id }) => {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <label for="post"></label>
+        <label htmlFor="post"></label>
         <button className="comment-button" type="submit">
           Comment
         </button>

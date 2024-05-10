@@ -4,8 +4,8 @@ const ncApi = axios.create({
   baseURL: `https://northcoders-news-7ei3.onrender.com/api`,
 });
 
-export const getArticles = () => {
-  return ncApi.get("/articles").then(({ data }) => {
+export const getArticles = (topicQuery) => {
+  return ncApi.get("/articles", {params: { topic: topicQuery }}).then(({ data }) => {
     return data.articles;
   });
 };
@@ -52,3 +52,9 @@ export const getUsers = () => {
     return data.users;
   });
 };
+
+export const getTopics = () => {
+  return ncApi.get("/topics").then(({data})=>{
+    return data.topics;
+  })
+}

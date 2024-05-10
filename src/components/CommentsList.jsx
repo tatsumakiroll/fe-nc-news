@@ -26,7 +26,7 @@ const CommentsList = () => {
           votes={comment.votes}
         />
       ))}
-      <CommentPostForm article_id={article_id} setComments={setComments}/>
+      <CommentPostForm article_id={article_id} setComments={setComments} />
     </div>
   );
 };

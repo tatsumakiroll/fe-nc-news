@@ -21,7 +21,7 @@ h3{
   color:white;
 }
 .articles-list {
-  display: inline-flex;
+  display: block;
   flex-direction: column;
   justify-content: center;
 }
@@ -116,14 +116,51 @@ float:left;
 }
 .navbar {
   display:flex;
-  overflow:hidden;
   color:white;
   justify-content: space-evenly;
   background-color: #070505;
   margin-bottom:20px;
   position: relative;
+
 }
 select{
   margin-top: 23px;
   margin-right: 2px;
 }
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+.dropdown .drop-button {
+  font-size: 20px;
+  color: white;
+  border-radius:0;
+  padding-top:20px;
+  background-color: black;
+  font-family: inherit;
+}
+.navbar .link-style:hover, .dropdown:hover .drop-button {
+  background-color: rgb(26, 24, 24);
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 999;
+}
+.dropdown-content .link-style {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+.dropdown-content .link-style:hover {
+  background-color: #ddd;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+} 

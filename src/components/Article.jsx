@@ -34,7 +34,7 @@ const Article = () => {
             className="single-article-img"
             src={currentArticle.article_img_url}
           />
-          <>//{currentArticle.topic}</>
+          <>{currentArticle.topic}</>
           <h2 className="art-title">{currentArticle.title}</h2>
           <ArticleVoteCard
             article_id={currentArticle.article_id}

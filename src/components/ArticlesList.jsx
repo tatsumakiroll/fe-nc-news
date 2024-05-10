@@ -28,7 +28,7 @@ const ArticlesList = () => {
         <ArticleCard
           key={article.article_id}
           article_id={article.article_id}
-          topic={article.topic}
+          topic={`//${article.topic}`}
           author={article.author}
           title={article.title}
           created_at={article.created_at}

@@ -17,12 +17,8 @@ h2 {
   font-size: large;
   text-align: left;
 }
-h3 {
-  text-align: right;
-  color: white;
-  background-color: black;
-  width: 90%;
-  padding: 10px;
+h3{
+  color:white;
 }
 .articles-list {
   display: inline-flex;
@@ -114,4 +110,20 @@ h3 {
   color: black;
   background-color: white;
   width: 95%;
+}
+#comment-delete{
+float:left;
+}
+.navbar {
+  display:flex;
+  overflow:hidden;
+  color:white;
+  justify-content: space-evenly;
+  background-color: #070505;
+  margin-bottom:20px;
+  position: relative;
+}
+select{
+  margin-top: 23px;
+  margin-right: 2px;
 }

@@ -4,11 +4,22 @@ const ncApi = axios.create({
   baseURL: `https://northcoders-news-7ei3.onrender.com/api`,
 });
 
-export const getArticles = (topicQuery) => {
-  return ncApi.get("/articles", {params: { topic: topicQuery }}).then(({ data }) => {
-    return data.articles;
-  });
-};
+export const getArticles = (topicQuery, sort, order) => {
+  if(sort || order){
+    return ncApi.get(`/articles?sort_by=${sort}&&order_by=${order}`).then(({data})=>{
+      return data.articles
+    })
+  }
+  else{
+    return ncApi
+    .get("/articles", {params: { topic: topicQuery
+  }}).then(({data})=>{
+    return data.articles
+  })
+}
+}
+
+
 
 export const getArticleById = (article_id) => {
   return ncApi.get(`/articles/${article_id}`).then(({ data }) => {

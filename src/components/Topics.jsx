@@ -4,7 +4,8 @@ import { getTopics } from "../utils/utils";
 
 const Topics = () => {
     const [topics, setTopics] = React.useState([]);
-  React.useEffect(() => {
+  
+    React.useEffect(() => {
 
     getTopics().then((topics) => {
       const topicArray = topics.map((topic) => topic.slug);

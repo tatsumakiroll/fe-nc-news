@@ -10,11 +10,9 @@ const CommentCard = ({
   votes
 }) => {
 const { currentUser } = React.useContext(UserLoginContext);
-
+const isAuthor = currentUser===author
 const handleDelete = (event) => {
-  if(currentUser===author)
   deleteComment(event.target.value)
-
 };
 
   return (
@@ -23,9 +21,11 @@ const handleDelete = (event) => {
       <h4 className="comment-body">{author}</h4>
       <p className="comment-body">{created_at}</p>
       <p className="comment-vote">{votes}</p>
-      <button id="comment-delete" value={comment_id} onClick={handleDelete}>
-      ❌
-      </button>
+      {isAuthor && (
+        <button  value={comment_id} onClick={handleDelete} id="delete-button">
+          delete
+        </button>
+      )}
     </div>
   );
 };

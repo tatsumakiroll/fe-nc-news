@@ -11,7 +11,7 @@ const Users = () => {
 
   return (
     <form onSubmit={handleUserLogin}>
-      <label>Users </label>
+      <label>Users</label>
       <select>
         <option onClick={handleUserLogin} value="tickle122">
           tickle122

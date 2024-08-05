@@ -12,6 +12,7 @@ function App() {
 
   return (
     <UserLoginContext.Provider value={{ currentUser, setCurrentUser }}>
+      <Header/>
       <Nav />
       <Routes>
         <Route path="/" element={<ArticlesList />} />

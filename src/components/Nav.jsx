@@ -13,6 +13,7 @@ const Nav = () => {
       <Link to="/">
         <a>Home</a>
       </Link>
+      <Topics/>
       <p>hiya {currentUser}!</p>
       <Users />
       </div>

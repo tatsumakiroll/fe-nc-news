@@ -15,12 +15,10 @@ const ArticleCard = ({
         <img className="article-card-img" src={article_img_url} />
       </Link>
       <div className="article-card-details">
-        <p>{topic}</p>
         <Link to={`/articles/${article_id}`}>
-          <h2>{title}</h2>
+          <div className="art-title">{title}</div>
         </Link>
-        <p>{created_at}</p>
-        <p>by {author}</p>
+        <p className="article-author">by {author}</p>
       </div>
     </div>
   );

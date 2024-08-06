@@ -128,7 +128,7 @@ a:hover {
   flex-wrap: wrap;
 }
 .comment-body {
-  width: 
+  width: 100%
 }
 .comment-vote {
   text-align: right;

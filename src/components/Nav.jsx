@@ -9,12 +9,13 @@ const Nav = () => {
 
   return (
     <nav className="navbar">
+    <div className="links">
       <Link to="/">
         <a>Home</a>
       </Link>
-      <Topics/>
       <p>hiya {currentUser}!</p>
       <Users />
+      </div>
     </nav>
   );
 };

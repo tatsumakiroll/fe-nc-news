@@ -1,13 +1,16 @@
 import React from "react";
+import Nav from "./Nav";
 
 const Header = () => {
-  return (
+  return (<>
   <div className="header-banner">
   <p id="header-date">EST. 2024</p>
-  <h1>
-    <span id="logo1">Northcoders</span> News</h1>
+  <h1 id="headertext2">
+    <span id="headertext1">Northcoders</span> News</h1>
     <p>NEWS PROVIDER OF THE YEAR</p>
     </div>
+    <Nav/>
+    </>
 )};
 
 export default Header;

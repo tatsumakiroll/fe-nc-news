@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { getTopics } from "../utils/utils";
+import { MenuItem, Menu, Button } from "@mui/material";
 
 const Topics = () => {
     const [topics, setTopics] = React.useState([]);
@@ -14,18 +15,14 @@ const Topics = () => {
   }, []);
 
   return (
-    <>
-      <div className="dropdown">
-        <button className="drop-button">
+        <Menu>
           Topics
-        </button>
-        <div className="dropdown-content">
+        <MenuItem>
          {topics.map((topic)=>(
-       <Link className="link-style" key={topic} to={`/articles?topic=${topic}`}>{topic}</Link>
-    ))}   
-    </div>
-      </div>
-    </>
+           <Button className="link-style" key={topic} to={`/articles?topic=${topic}`}>{topic}</Button>
+          ))}   
+    </MenuItem>
+          </Menu>
   );
 };
 

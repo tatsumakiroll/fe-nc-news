@@ -1,23 +1,20 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { UserLoginContext } from "../context/UserLoginContext";
 import Users from "./Users";
 import Topics from "./Topics"
+import { Stack, Button, Typography, AppBar, Toolbar, IconButton } from "@mui/material";
 
 const Nav = () => {
   const { currentUser } = React.useContext(UserLoginContext);
 
   return (
-    <nav className="navbar">
-    <div className="links">
-      <Link to="/">
-        <a>Home</a>
-      </Link>
-      <Topics/>
-      <p>hiya {currentUser}!</p>
-      <Users />
-      </div>
-    </nav>
+    <AppBar sx={{position: 'relative', bgcolor: '#2b317a', }}>
+    <Stack direction='row'>
+      <Button href="/">
+        Home
+      </Button>
+      </Stack>
+      </AppBar>
   );
 };
 

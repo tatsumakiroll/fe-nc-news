@@ -5,6 +5,7 @@ import { useSearchParams } from "react-router-dom";
 import ArticleCard from "./ArticleCard";
 import SortOrder from "./SortOrder";
 import loadingGraphic from "../assets/loadingGraphic.json";
+import { Grid } from "@mui/material";
 
 const ArticlesList = () => {
   const [articles, setArticles] = React.useState([]);
@@ -33,7 +34,7 @@ const ArticlesList = () => {
   return (
     <div>
       <SortOrder setSort={setSort} setOrder={setOrder} />
-      <section className="articles-list">
+      <Grid container spacing={2} sx={{gridAutoRows:'1fr'}}>
         {articles.map((article) => (
           <ArticleCard
             key={article.article_id}
@@ -45,7 +46,7 @@ const ArticlesList = () => {
             article_img_url={article.article_img_url}
           />
         ))}
-      </section>
+      </Grid>
     </div>
   );
 };

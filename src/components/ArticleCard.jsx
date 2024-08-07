@@ -1,3 +1,4 @@
+import { CardMedia, Card, CardContent, Typography, Grid } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -10,17 +11,22 @@ const ArticleCard = ({
   title,
 }) => {
   return (
-    <div className="article-card">
+    <Grid item xs={6}>
+    <Card sx={{display: 'flex', flexDirection: 'column'}}>
       <Link to={`/articles/${article_id}`}>
-        <img className="article-card-img" src={article_img_url} />
+        <CardMedia
+        style={{height:0, paddingTop:'75%'}}
+          image={article_img_url}
+        />
       </Link>
-      <div className="article-card-details">
+      <CardContent >
         <Link to={`/articles/${article_id}`}>
-          <div className="art-title">{title}</div>
+          <Typography sx={{fontFamily: 'serif', fontSize: 16, fontWeight: '300'}}>{title}</Typography>
         </Link>
-        <p className="article-author">by {author}</p>
-      </div>
-    </div>
+        <Typography sx={{fontFamily:'sans-serif'}}>by {author}</Typography>
+      </CardContent>
+    </Card>
+    </Grid>
   );
 };
 

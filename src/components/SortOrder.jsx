@@ -11,7 +11,7 @@ const handleOrder =(e)=>{
 }
 
   return (
-    <form className="sort">
+    <form className="sort" style={{paddingTop:'1rem'}}>
     <label>sort: </label>
     <select onChange={handleSort}>
         <option></option>

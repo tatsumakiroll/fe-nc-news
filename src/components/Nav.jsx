@@ -1,23 +1,22 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { UserLoginContext } from "../context/UserLoginContext";
 import Users from "./Users";
 import Topics from "./Topics"
+import { Button, AppBar,ButtonGroup } from "@mui/material";
 
 const Nav = () => {
   const { currentUser } = React.useContext(UserLoginContext);
 
   return (
-    <nav className="navbar">
-    <div className="links">
-      <Link to="/">
-        <a>Home</a>
-      </Link>
-      <Topics/>
-      <p>hiya {currentUser}!</p>
-      <Users />
-      </div>
-    </nav>
+    <AppBar sx={{position: 'relative', bgcolor: '#2b317a'}}>
+      <ButtonGroup variant="outlined" color='primary'>
+      <Button href="/">
+        Home
+      </Button>
+      <Button>Topics</Button>
+      <Button>Login</Button>
+      </ButtonGroup>
+      </AppBar>
   );
 };
 

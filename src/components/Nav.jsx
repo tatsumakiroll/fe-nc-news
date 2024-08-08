@@ -2,18 +2,20 @@ import React from "react";
 import { UserLoginContext } from "../context/UserLoginContext";
 import Users from "./Users";
 import Topics from "./Topics"
-import { Stack, Button, Typography, AppBar, Toolbar, IconButton } from "@mui/material";
+import { Button, AppBar,ButtonGroup } from "@mui/material";
 
 const Nav = () => {
   const { currentUser } = React.useContext(UserLoginContext);
 
   return (
-    <AppBar sx={{position: 'relative', bgcolor: '#2b317a', }}>
-    <Stack direction='row'>
+    <AppBar sx={{position: 'relative', bgcolor: '#2b317a'}}>
+      <ButtonGroup variant="outlined" color='primary'>
       <Button href="/">
         Home
       </Button>
-      </Stack>
+      <Button>Topics</Button>
+      <Button>Login</Button>
+      </ButtonGroup>
       </AppBar>
   );
 };

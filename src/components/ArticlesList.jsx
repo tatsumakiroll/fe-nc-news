@@ -1,11 +1,9 @@
 import React from "react";
-import Lottie from "lottie-react";
 import { getArticles } from "../utils/utils";
 import { useSearchParams } from "react-router-dom";
 import ArticleCard from "./ArticleCard";
 import SortOrder from "./SortOrder";
-import loadingGraphic from "../assets/loadingGraphic.json";
-import { Grid } from "@mui/material";
+import { Box, Grid, CircularProgress } from "@mui/material";
 
 const ArticlesList = () => {
   const [articles, setArticles] = React.useState([]);
@@ -25,16 +23,16 @@ const ArticlesList = () => {
 
   if (loading) {
     return (
-      <div>
-        <Lottie animationData={loadingGraphic} />
-      </div>
+      <Box sx={{ display: 'flex' }}>
+      <CircularProgress />
+    </Box>
     );
   }
 
   return (
-    <div>
+    <Box>
       <SortOrder setSort={setSort} setOrder={setOrder} />
-      <Grid container spacing={2} sx={{gridAutoRows:'1fr'}}>
+      <Grid container spacing={2} sx={{paddingTop:'1rem', alignItems:'center', justifyContent:'center'}}>
         {articles.map((article) => (
           <ArticleCard
             key={article.article_id}
@@ -47,7 +45,7 @@ const ArticlesList = () => {
           />
         ))}
       </Grid>
-    </div>
+    </Box>
   );
 };
 

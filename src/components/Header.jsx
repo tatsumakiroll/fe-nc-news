@@ -11,7 +11,7 @@ const Header = () => {
           flexDirection: "column",
           flexWrap: "wrap",
           margin: "1rem",
-          maxWidth: "100%",
+          maxWidth: "100vw",
         }}
       >
         <Typography

@@ -12,7 +12,7 @@ function App() {
 
   return (
     <UserLoginContext.Provider value={{ currentUser, setCurrentUser }}>
-      <Container sx={{bgcolor: 'white', height: "100vh", width:'100vw'}}>
+      <Container sx={{bgcolor: 'white', height: "100vh", width:'95vw'}}>
       <Header/>
       <Routes>
         <Route path="/" element={<ArticlesList />} />

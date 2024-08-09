@@ -12,13 +12,20 @@ function App() {
 
   return (
     <UserLoginContext.Provider value={{ currentUser, setCurrentUser }}>
-      <Container sx={{bgcolor: 'white', height: "100vh", width:'95vw'}}>
-      <Header/>
-      <Routes>
-        <Route path="/" element={<ArticlesList />} />
-        <Route path="/articles" element={<ArticlesList />} />
-        <Route path="/articles/:article_id" element={<Article />} />
-      </Routes>
+      <Container
+        sx={{
+          bgcolor: "white",
+          height: "100vh",
+          width: "95vw",
+          alignContent: "center",
+        }}
+      >
+        <Header />
+        <Routes>
+          <Route path="/" element={<ArticlesList />} />
+          <Route path="/articles" element={<ArticlesList />} />
+          <Route path="/articles/:article_id" element={<Article />} />
+        </Routes>
       </Container>
     </UserLoginContext.Provider>
   );

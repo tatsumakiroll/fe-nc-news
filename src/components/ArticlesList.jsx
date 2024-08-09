@@ -3,7 +3,7 @@ import { getArticles } from "../utils/utils";
 import { useSearchParams } from "react-router-dom";
 import ArticleCard from "./ArticleCard";
 import SortOrder from "./SortOrder";
-import { Box, Grid, CircularProgress, ButtonGroup, Button } from "@mui/material";
+import { Box, Grid, CircularProgress, Pagination } from "@mui/material";
 import Topics from "./Topics";
 
 const ArticlesList = () => {
@@ -24,19 +24,19 @@ const ArticlesList = () => {
 
   if (loading) {
     return (
-      <Box sx={{ display: 'flex' }}>
-      <CircularProgress />
-    </Box>
+      <Box sx={{ display: "flex" }}>
+        <CircularProgress />
+      </Box>
     );
   }
 
   return (
     <Box>
-      <Box display="flex" flexDirection={'row'} >
-      <Topics/>
-      <SortOrder setSort={setSort} setOrder={setOrder} />
+      <Box display="flex" flexDirection={"row"}>
+        <Topics />
+        <SortOrder setSort={setSort} setOrder={setOrder} />
       </Box>
-      <Grid container spacing={2} sx={{paddingTop:'1rem', alignItems:'center', justifyContent:'center'}}>
+      <Grid container spacing={2} sx={{ paddingTop: "1rem" }}>
         {articles.map((article) => (
           <ArticleCard
             key={article.article_id}
@@ -49,6 +49,7 @@ const ArticlesList = () => {
           />
         ))}
       </Grid>
+      <Pagination count={10} shape="rounded" sx={{ margin: "1rem" }} />
     </Box>
   );
 };

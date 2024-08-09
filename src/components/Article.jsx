@@ -19,14 +19,14 @@ const Article = () => {
 
   if (loading) {
     return (
-      <Box sx={{ display: 'flex' }}>
-      <CircularProgress />
-    </Box>
+      <Box sx={{ display: "flex" }}>
+        <CircularProgress />
+      </Box>
     );
   }
 
   return (
-    <section>
+    <Box>
       <div className="single-article">
         <div className="art-section-a">
           <img
@@ -47,7 +47,7 @@ const Article = () => {
         </div>
       </div>
       <CommentsList article={currentArticle} />
-    </section>
+    </Box>
   );
 };
 

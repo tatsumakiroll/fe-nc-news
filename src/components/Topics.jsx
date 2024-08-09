@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { getTopics } from "../utils/utils";
-import { MenuItem, Menu, Button } from "@mui/material";
+import { MenuItem, Menu, Button, ButtonGroup } from "@mui/material";
 
 const Topics = () => {
     const [topics, setTopics] = React.useState([]);
@@ -15,14 +15,12 @@ const Topics = () => {
   }, []);
 
   return (
-        <Menu>
+        <ButtonGroup sx={{marginTop:'1rem', marginRight:'10rem'}}>
           Topics
-        <MenuItem>
          {topics.map((topic)=>(
            <Button className="link-style" key={topic} to={`/articles?topic=${topic}`}>{topic}</Button>
           ))}   
-    </MenuItem>
-          </Menu>
+          </ButtonGroup>
   );
 };
 

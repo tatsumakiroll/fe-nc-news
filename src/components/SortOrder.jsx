@@ -1,33 +1,40 @@
-import React from 'react'
+import { FormControl, InputLabel, Select, MenuItem, Box } from "@mui/material";
+import React from "react";
 
-const SortOrder = ({setSort, setOrder}) => {
+const SortOrder = ({ setSort, setOrder }) => {
+  const handleSort = (e) => {
+    setSort(e.target.value);
+  };
 
-const handleSort =(e)=>{
-    setSort(e.target.value)
-}
-
-const handleOrder =(e)=>{
-    setOrder(e.target.value)
-}
+  const handleOrder = (e) => {
+    setOrder(e.target.value);
+  };
 
   return (
-    <form className="sort">
-    <label>sort: </label>
-    <select onChange={handleSort}>
-        <option></option>
-        <option value="comment_count">comment count</option>
-        <option value="created_at">created at</option>
-        <option value="votes">vote count</option>
-    </select>
-    <label> order: </label>
-    <select onChange={handleOrder}>
-        <option></option>
-        <option value="desc">desc</option>
-        <option value="asc">asc</option>
-    </select>
-    
-  </form>
-  )
-}
-
-export default SortOrder
+    <Box>
+      <FormControl
+        sx={{
+          order: "1",
+          marginLeft: "1rem",
+          marginTop: "1rem",
+          minWidth: "5rem",
+        }}
+      >
+        <InputLabel>Sort</InputLabel>
+        <Select onChange={handleSort} label="Sort">
+          <MenuItem value="comment_count">comment count</MenuItem>
+          <MenuItem value="created_at">created at</MenuItem>
+          <MenuItem value="votes">vote count</MenuItem>
+        </Select>
+      </FormControl>
+      <FormControl sx={{ order: "1", marginLeft: "1rem", marginTop: "1rem", minWidth:'4.5rem' }}>
+        <InputLabel sx={{ minWidth: "max-content" }}>Order</InputLabel>
+        <Select onChange={handleOrder} label="Order">
+          <MenuItem value="desc">desc</MenuItem>
+          <MenuItem value="asc">asc</MenuItem>
+        </Select>
+      </FormControl>
+    </Box>
+  );
+};
+export default SortOrder;

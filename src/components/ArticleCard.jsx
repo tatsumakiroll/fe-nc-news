@@ -55,7 +55,12 @@ const ArticleCard = ({
             <Link
               href={`/articles/${article_id}`}
               underline="hover"
-              sx={{ fontFamily: "serif", cursor: "pointer", fontSize: "1rem" }}
+              sx={{
+                fontFamily: "serif",
+                cursor: "pointer",
+                fontSize: "1rem",
+                color: "#2b317a",
+              }}
             >
               {title}
             </Link>

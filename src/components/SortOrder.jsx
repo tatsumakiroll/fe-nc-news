@@ -17,7 +17,7 @@ const SortOrder = ({ setSort, setOrder }) => {
           order: "1",
           marginLeft: "1rem",
           marginTop: "1rem",
-          minWidth: "5rem",
+          minWidth: "4.75rem",
         }}
       >
         <InputLabel>Sort</InputLabel>
@@ -27,7 +27,7 @@ const SortOrder = ({ setSort, setOrder }) => {
           <MenuItem value="votes">vote count</MenuItem>
         </Select>
       </FormControl>
-      <FormControl sx={{ order: "1", marginLeft: "1rem", marginTop: "1rem", minWidth:'4.5rem' }}>
+      <FormControl sx={{ order: "1", marginLeft: "1rem", marginTop: "1rem", minWidth:'5.5rem' }}>
         <InputLabel sx={{ minWidth: "max-content" }}>Order</InputLabel>
         <Select onChange={handleOrder} label="Order">
           <MenuItem value="desc">desc</MenuItem>

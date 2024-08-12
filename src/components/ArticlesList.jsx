@@ -49,7 +49,7 @@ const ArticlesList = () => {
           />
         ))}
       </Grid>
-      <Pagination count={10} shape="rounded" sx={{ margin: "1rem" }} />
+      <Pagination count={8} shape="rounded" sx={{ margin: "1rem"}} />
     </Box>
   );
 };

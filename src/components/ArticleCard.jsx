@@ -58,7 +58,7 @@ const ArticleCard = ({
               sx={{
                 fontFamily: "serif",
                 cursor: "pointer",
-                fontSize: "1rem",
+                fontSize: "1.25rem",
                 color: "#2b317a",
               }}
             >

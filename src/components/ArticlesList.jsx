@@ -3,7 +3,7 @@ import { getArticles } from "../utils/utils";
 import { useSearchParams } from "react-router-dom";
 import ArticleCard from "./ArticleCard";
 import SortOrder from "./SortOrder";
-import { Box, Grid, CircularProgress, Pagination } from "@mui/material";
+import { Box, Grid, CircularProgress, Pagination, Stack, Divider, Typography } from "@mui/material";
 import Topics from "./Topics";
 
 const ArticlesList = () => {
@@ -36,6 +36,7 @@ const ArticlesList = () => {
         <Topics />
         <SortOrder setSort={setSort} setOrder={setOrder} />
       </Box>
+        <Stack sx={{alignItems:'center', justifyContent:'center', color:''}}>
       <Grid container spacing={2} sx={{ paddingTop: "1rem" }}>
         {articles.map((article) => (
           <ArticleCard
@@ -49,7 +50,13 @@ const ArticlesList = () => {
           />
         ))}
       </Grid>
-      <Pagination count={8} shape="rounded" sx={{ margin: "1rem"}} />
+      <Pagination count={10} shape="rounded" sx={{ margin: "1rem"}} />
+      </Stack>
+      <Divider>
+      </Divider>
+        <Typography
+        sx={{padding:"0.3rem"}}>nc news ltd</Typography>
+
     </Box>
   );
 };

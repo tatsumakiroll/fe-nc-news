@@ -3,7 +3,16 @@ import { getArticleById } from "../utils/utils";
 import { useParams } from "react-router";
 import CommentsList from "./CommentsList";
 import ArticleVoteCard from "./ArticleVoteCard";
-import { Box, CircularProgress } from "@mui/material";
+import {
+  Box,
+  CircularProgress,
+  Grid,
+  Stack,
+  Typography,
+  Card,
+  CardMedia,
+  Chip,
+} from "@mui/material";
 
 const Article = () => {
   const [currentArticle, setCurrentArticle] = React.useState([]);
@@ -26,28 +35,57 @@ const Article = () => {
   }
 
   return (
-    <Box>
-      <div className="single-article">
-        <div className="art-section-a">
-          <img
-            className="single-article-img"
-            src={currentArticle.article_img_url}
-          />
-          <div className="art-topic">{currentArticle.topic}</div>
-          <h2 className="art-title">{currentArticle.title}</h2>
-          <ArticleVoteCard
-            article_id={currentArticle.article_id}
-            votes={currentArticle.votes}
-          />
-        </div>
-        <p className="art-section-b">{currentArticle.body}</p>
-        <div className="art-section-c">
+    <Grid sx={{ margin: "1rem", justifyContent: "center" }}>
+      <Stack sx={{ display: "flex", flexDirection: "row" }}>
+          <Chip
+            label={currentArticle.topic}
+            size="small"
+            sx={{
+              width: "auto",
+              borderRadius: 1,
+              position: "absolute",
+              color: "#2b317a",
+              bgcolor: "#ded5f2",
+              margin: "0.5rem",
+            }}
+          >
+            {currentArticle.topic}
+          </Chip>
+          <Box
+            sx={{
+              background:`${currentArticle.article_img_url}`,
+              width: "auto",
+              height: "240",
+            }}
+          >
+          <Typography
+            variant="h4"
+            sx={{
+              fontFamily: "serif",
+              padding: "2rem",
+              fontWeight: "600",
+              lineHeight: "0.9",
+            }}
+          >
+            {currentArticle.title}
+          </Typography>
+        </Box>
+      </Stack>
+      <Stack sx={{ justifyContent: "center" }}>
+        <ArticleVoteCard
+          article_id={currentArticle.article_id}
+          votes={currentArticle.votes}
+        />
+        <Typography variant="h6" sx={{ fontFamily: "serif", fontsize: "rem" }}>
+          {currentArticle.body}
+        </Typography>
+        <Stack>
           <p>by {currentArticle.author}</p>
           <p>{currentArticle.created_at}</p>
-        </div>
-      </div>
+        </Stack>
+      </Stack>
       <CommentsList article={currentArticle} />
-    </Box>
+    </Grid>
   );
 };
 

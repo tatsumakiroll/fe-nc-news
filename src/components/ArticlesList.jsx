@@ -55,7 +55,7 @@ const ArticlesList = () => {
       <Divider>
       </Divider>
         <Typography
-        sx={{padding:"0.3rem"}}>nc news ltd</Typography>
+        sx={{padding:"0.32rem"}}>nc news ltd</Typography>
 
     </Box>
   );

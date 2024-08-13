@@ -3,6 +3,7 @@ import CommentCard from "./CommentCard";
 import { getCommentsByArticleId } from "../utils/utils";
 import { useParams } from "react-router";
 import CommentPostForm from "./CommentPostForm";
+import { Grid } from "@mui/material";
 
 const CommentsList = () => {
   const [comments, setComments] = React.useState([]);
@@ -15,7 +16,7 @@ const CommentsList = () => {
   }, [comments]);
 
   return (
-    <div className="comments-list">
+    <Grid container spacing={2} sx={{ paddingTop: "1rem" }}>
       {comments.map((comment) => (
         <CommentCard
           key={comment.comment_id}
@@ -27,7 +28,7 @@ const CommentsList = () => {
         />
       ))}
       <CommentPostForm article_id={article_id} setComments={setComments} />
-    </div>
+    </Grid>
   );
 };
 export default CommentsList;

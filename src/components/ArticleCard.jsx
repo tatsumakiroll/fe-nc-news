@@ -18,6 +18,9 @@ const ArticleCard = ({
   article_img_url,
   title,
 }) => {
+  if (title.length > 50) {
+    title = title.substr(0, 50) + "...";
+  }
   return (
     <Grid item xs={12} sm={6} md={3}>
       <Card

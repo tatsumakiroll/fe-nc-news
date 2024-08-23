@@ -1,46 +1,41 @@
 import React from "react";
 import Nav from "./Nav";
-import { Box, Divider, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
 const Header = () => {
   return (
     <>
-    <Divider></Divider>
       <Box
         sx={{
           display: "flex",
-          flexDirection: "column",
+          flexDirection: "row",
           flexWrap: "wrap",
-          margin: "0.75rem",
-          marginLeft: "0",
-          maxWidth: "100vw"
+          maxWidth: "100vw",
+          paddingBottom:"0.5rem"
         }}
       >
         <Typography
           sx={{
             display: "flex",
-            color: "#ded5f2",
-            fontFamily: "serif",
+            color: "#2b317a",
+            fontFamily: "OldLondon",
             fontWeight: 800,
-            fontSize: "3rem",
+            fontSize: "4.5rem",
             textAlign: "left",
-            lineHeight: "0.8",
             flexDirection: "row",
           }}
         >
           NC
-          <Typography
-            sx={{
-              color: "#2b317a",
-              fontSize: "inherit",
-              fontFamily: "inherit",
-              fontWeight: "inherit",
-            }}
-          >
-            news
-          </Typography>
         </Typography>
-        <Divider></Divider>
+        <Typography
+          sx={{
+            fontFamily: "OldLondon",
+            fontSize: "4.5rem",
+            marginLeft: "0.5rem",
+          }}
+        >
+          news
+        </Typography>
       </Box>
       <Nav />
     </>

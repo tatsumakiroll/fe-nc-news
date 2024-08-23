@@ -9,8 +9,6 @@ import {
   Grid,
   Stack,
   Typography,
-  Card,
-  CardMedia,
   Chip,
 } from "@mui/material";
 
@@ -80,8 +78,8 @@ const Article = () => {
           {currentArticle.body}
         </Typography>
         <Stack>
-          <p>by {currentArticle.author}</p>
-          <p>{currentArticle.created_at}</p>
+          <Typography>by {currentArticle.author}</Typography>
+          <Typography>{currentArticle.created_at}</Typography>
         </Stack>
       </Stack>
       <CommentsList article={currentArticle} />
